@@ -1,0 +1,23 @@
+{
+  "name": "html_ui",
+  "authors": [
+    "Lars Bilke <lars.bilke@ufz.de>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "handlebars": "^4.0.5",
+    "jquery": "^2.2.0",
+    "semantic": "semantic-ui#^2.1.8"
+  }
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Test Semantic UI</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+	<link rel="stylesheet" type="text/css" href="bower_components/semantic/dist/semantic.min.css">
+	<link rel="stylesheet" type="text/css" href="semantic-ui-range/range.css">
+
+	<script src="bower_components/handlebars/handlebars.js"></script>
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+	<script src="bower_components/semantic/dist/semantic.js"></script>
+	<script src="semantic-ui-range/range.js"></script>
+
+
+</head>
+<body>
+
+<div class="ui container">
+	<div id="list" class="ui selection list"></div>
+</div>
+
+
+<script id="entry-template" type="text/x-handlebars-template">
+	Title: {{title}}
+	{{#each items}}
+	<div class="item">
+		<div class="ui grid">
+			<div class="four wide column">
+				{{#if this.enabled}}
+				<i class="circle icon"></i>
+				{{else}}
+				<i class="circle icon thin"></i>
+				{{/if}}
+				{{{this.name}}}
+			</div>
+			<div class="twelve wide column">
+				<div class="ui range" id="my-range-{{this.id}}"></div>
+			</div>
+		</div>
+	</div>
+	{{/each}}
+</script>
+
+<script type="text/javascript">
+
+	var context = {
+		items: [
+			{name: 'Foo', opacity: 1.0, enabled: true, id: 20055},
+			{name: 'Bar', opacity: 0.5, enabled: false, id: 20053},
+			{name: 'Blub', opacity: 0.25, enabled: true, id: 45652}
+		],
+		title: "Ein Titel!"
+	};
+	var source = $("#entry-template").html();
+	var template = Handlebars.compile(source);
+	var html = template(context);
+	$("#list").append(html);
+
+	context.items.forEach(function (entry) {
+		$('#my-range-' + entry.id).range({
+			min: 0,
+			max: 1,
+			start: entry.opacity,
+			step: 0.05
+		});
+	});
+
+</script>
+
+<!-- LiveReload -->
+<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+</body>
+</html>
