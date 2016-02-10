@@ -1,0 +1,10 @@
+{{outlet}}
+<h2>Visibilities</h2>
+
+<div class="ui container">
+	<div id="list" class="ui selection list">
+		{{#each model as |item|}}
+			{{object-visibility name=item.name enabled=item.enabled opacity=item.opacity}}
+		{{/each}}
+	</div>
+</div>

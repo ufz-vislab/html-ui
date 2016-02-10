@@ -1,0 +1,19 @@
+{{yield}}
+
+<div class="item">
+	<div class="ui grid">
+		<div {{action "toggleEnable"}} class="four wide column">
+			{{#if enabled}}
+				<i class="circle icon"></i>
+			{{else}}
+				<i class="circle icon thin"></i>
+			{{/if}}
+			{{name}}
+
+			<!--({{opacity}})-->
+		</div>
+		<div class="twelve wide column">
+			{{simple-slider min=0 max=1 step=0.01 start=opacity slide="opacityChanged"}}
+		</div>
+	</div>
+</div>
