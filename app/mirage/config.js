@@ -1,4 +1,4 @@
-export default function () {
+export default function () {this.passthrough('/visibilities');
   this.get('/visibilities', function () {
     return {
       data: [

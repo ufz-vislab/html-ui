@@ -21,7 +21,8 @@ module.exports = function(environment) {
       'default-src': "'none'",
       'script-src': "'self' 'unsafe-inline' 'unsafe-eval' use.typekit.net connect.facebook.net maps.googleapis.com maps.gstatic.com",
       'font-src': "'self' data: use.typekit.net fonts.gstatic.com",
-      'connect-src': "'self'",
+      'connect-src': "'self' ws://localhost:7000 localhost:7000",
+      'report-uri':"'localhost'",
       'img-src': "'self' www.facebook.com p.typekit.net",
       'style-src': "'self' 'unsafe-inline' use.typekit.net fonts.googleapis.com",
       'frame-src': "s-static.ak.facebook.com static.ak.facebook.com www.facebook.com"

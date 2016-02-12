@@ -50,4 +50,6 @@ Specify what it takes to deploy your app.
 * Development Browser Extensions
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
-
+* [simple-slider](http://kennethkalmer.github.io/ember-cli-nouislider/#/)
+* [semantic-ui-ember](https://github.com/Semantic-Org/Semantic-UI-Ember)
+* [ember-cli-mirage](http://www.ember-cli-mirage.com)
